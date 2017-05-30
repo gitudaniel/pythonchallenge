@@ -11,7 +11,8 @@ Viewing the page source there is a section written "find rare characters in the 
 What the two have in common is that they are both started by "<!--" and ended by "-->". So these are our two separators.
 .split did not work as intended so I resorted to regex.
 
-First I am looking for text within "<!--" and "-->" hence (.*?) and re.DOTALL makes sure that newline characters are matched as well.
+First I am looking for text within "<!--" and "-->" hence (.*?) and re.DOTALL makes sure that newline characters are matched as well. We use re.compile so that we get a regex object and every subsequent operation can be done on an object.
+re.DOTALL is used so that we match everything including new lines and line breaks (see: https://stackoverflow.com/a/41620138)
 
 "(.*?)" we want a non-greedy representation(?) of everything within the comments(.) that is repeated zero or more times(*).
 
