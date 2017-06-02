@@ -35,12 +35,12 @@ parameters = "<!--(.*?)-->"
 pattern=re.compile(parameters, re.DOTALL) # re.DOTALL reference (https://stackoverflow.com/a/41620138)
 
 text = re.findall(pattern, html)
-
+print text
 compiled_text = text[1] # the list we're interested in
 
 new_pattern = "[a-z][A-z]?" # parameters to use
 
 new_text = re.findall(new_pattern, compiled_text) # finds the letters
 
-print ''.join(new_text)
+#print ''.join(new_text)
 
