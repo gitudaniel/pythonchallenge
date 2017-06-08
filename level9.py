@@ -33,6 +33,8 @@ password = 'file'
 
 
 base64string = base64.b64encode('%s:%s' % (username, password))
+# base64 encoding reference: https://stackoverflow.com/a/8909233
+
 
 # Processing for the page stars here
 page_link = urllib2.Request('http://www.pythonchallenge.com/pc/return/good.html')
